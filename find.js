@@ -228,25 +228,25 @@
 
 
     var catalog_1inch_1st_3rd = new OpenLayers.Layer.OSM("Scotland, OS One inch, 1856-1912",
-	    "http://geoserver.nls.uk/geoserver/gwc/service/gmaps?layers=nls:catalog_1inch_1st_3rd&zoom=${z}&x=${x}&y=${y}&format=image/png",
+	    "http://geoserver.nls.uk:8080/geoserver/gwc/service/gmaps?layers=nls:catalog_1inch_1st_3rd&zoom=${z}&x=${x}&y=${y}&format=image/png",
 	    {
 	        attribution: '', isBaseLayer: false, visibility: true,  tileOptions: {crossOriginKeyword: null}
 	    });
 
     var catalog_6inch = new OpenLayers.Layer.OSM("Scotland, OS Six inch, 1843-1882",
-	    "http://geoserver.nls.uk/geoserver/gwc/service/gmaps?layers=nls:catalog_6inch&zoom=${z}&x=${x}&y=${y}&format=image/png",
+	    "http://geoserver.nls.uk:8080/geoserver/gwc/service/gmaps?layers=nls:catalog_6inch&zoom=${z}&x=${x}&y=${y}&format=image/png",
 	    {
 	        attribution: '', isBaseLayer: false, visibility: false, tileOptions: {crossOriginKeyword: null}
 	    });
  
     var catalog_1inch_newpop = new OpenLayers.Layer.OSM("England and Wales, OS One inch New Popular, 1945-47",
-	    "http://geoserver.nls.uk/geoserver/gwc/service/gmaps?layers=nls:new_pop_eng_wales&zoom=${z}&x=${x}&y=${y}&format=image/png",
+	    "http://geoserver.nls.uk:8080/geoserver/gwc/service/gmaps?layers=nls:new_pop_eng_wales&zoom=${z}&x=${x}&y=${y}&format=image/png",
 	    {
 	        attribution: '', isBaseLayer: false, visibility: false,   tileOptions: {crossOriginKeyword: null}
 	    });
 
     var catalog_1inch_seventh = new OpenLayers.Layer.OSM("Great Britain, OS One inch 7th series, 1952-1961",
-	    "http://geoserver.nls.uk/geoserver/gwc/service/gmaps?layers=nls:catalog_one_inch_7th_series&zoom=${z}&x=${x}&y=${y}&format=image/png",
+	    "http://geoserver.nls.uk:8080/geoserver/gwc/service/gmaps?layers=nls:catalog_one_inch_7th_series&zoom=${z}&x=${x}&y=${y}&format=image/png",
 	    {
 	        attribution: '', isBaseLayer: false, visibility: false, tileOptions: {crossOriginKeyword: null}
 	    });
@@ -303,7 +303,7 @@
 
         var jsonp = new OpenLayers.Protocol.Script({
 // IT IS ESSENTIAL THAT YOU ALTER THIS BELOW TO YOUR OWN GEOSERVER APPLICATION
-            url: "http://geoserver.nls.uk/geoserver/wfs",
+            url: "http://geoserver.nls.uk:8080/geoserver/wfs",
             callbackKey: "format_options",
             callbackPrefix: "callback:",
             params: {
@@ -312,7 +312,7 @@
                 typeName: OpenLayers.Util.getParameters(getOverlay().url)['layers'],
 
                 srsName: 'EPSG:900913',
-                outputFormat: 'json'
+                outputFormat: 'text/javascript'
             },
             
 		
